@@ -11,14 +11,18 @@ function createCubs(){
         division.className = `division`
         cubsContainer.appendChild(division)}  
         for (let cub of cubsContainer.children){
-            cub.addEventListener('mouseover', change1 )}
+            cub.addEventListener('mouseover', change1 )
+            cub.addEventListener('mouseout', change2 )
+        }
 }
 createCubs()
 const cubs = document.getElementsByClassName('division')
 console.log(cubsContainer.children)
 
 for (let cub of cubsContainer.children){
-    cub.addEventListener('mouseover', change1 )}
+    cub.addEventListener('mouseover', change1 )
+    cub.addEventListener('mouseout', change2 )
+    }
 
 function getInput(){  
         let usersInput = prompt(" hey,  pick number of squares ")
@@ -29,7 +33,7 @@ function getInput(){
         console.log(inputValue);
         remover()
         createCubs()
-        changeColor()
+        // changeColor()
         }
         else if(usersInput < 100){
         usersInput =Math.pow(usersInput, 2)
@@ -37,25 +41,32 @@ function getInput(){
         console.log(inputValue);
         remover()
         createCubs()
-        changeColor()
+        // changeColor()
         }
   
         }
         
-        let color = "#" 
         function changeColor(){
+            let color = "#" 
             let randomColor = Math.floor(Math.random()*16777215).toString(16);
-            color = "#" + randomColor 
+            return color = "#" + randomColor 
         }    
-        changeColor()
-function change1(){
-        this.style.backgroundColor = `${color}`
-        }    
-        console.log(color);
+    
+        
+function change1(e){
+        this.style.backgroundColor = changeColor()
+        this.classList.add('changeOver')
+        this.style.transition = "black"
+    }    
+    function change2(e){
+        this.style.backgroundColor = "black"
+        this.style.transition = "5s"
+    }  
+
 
 let theParent = document.getElementById('cubs-container')
 btn.addEventListener("click", getInput)
 function remover(){
     theParent.replaceChildren()
     }
-
+    // container.innerHTML += '<h3>''</h3>'

@@ -44,8 +44,10 @@ button{
     height: 50px;
     border-radius: 20px;
     }
-#container .changeover{
-    background-color: red ;
+.changeover{
+    transition-duration: 10s;
+    transition: 1s;
+    background-color: black ;
 }
 .my-color-class {
     background-color: rgb(0, 0, 0);
